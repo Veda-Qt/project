@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>TransferPage</class>
+ <widget class="QWidget" name="TransferPage">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,114 +13,101 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>50</y>
-     <width>50</width>
-     <height>50</height>
+     <x>0</x>
+     <y>0</y>
+     <width>801</width>
+     <height>501</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>20</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>&lt;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>50</y>
-     <width>400</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>누구에게 보낼까요?</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>125</y>
-     <width>200</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>test1</string>
+   <layout class="QGridLayout" name="glay1">
+    <property name="sizeConstraint">
+     <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
     </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>test2</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>bank1</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>bank2</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QTextEdit" name="textEdit">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>175</y>
-     <width>700</width>
-     <height>30</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="textEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>225</y>
-     <width>700</width>
-     <height>30</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>650</x>
-     <y>275</y>
-     <width>100</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PushButton</string>
-   </property>
-  </widget>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>325</y>
-     <width>700</width>
-     <height>125</height>
-    </rect>
-   </property>
+    <item row="2" column="0" colspan="2">
+     <widget class="QTextEdit" name="tedit_acnt_num"/>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="btn_ok">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Confirm</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QComboBox" name="combobox_bank">
+      <item>
+       <property name="text">
+        <string>test1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>test2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>bank1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>bank2</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QTextEdit" name="tedit_money"/>
+    </item>
+    <item row="5" column="0" colspan="2">
+     <widget class="QTableView" name="tview_acnt_histry"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="btn_back">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="lbl_msg">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>누구에게 보낼까요?</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
