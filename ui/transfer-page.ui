@@ -94,7 +94,7 @@
     <item>
      <layout class="QHBoxLayout" name="hlay4_tranfer">
       <item>
-       <widget class="QPushButton" name="btn_back">
+       <widget class="QPushButton" name="btn_back2">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
           <horstretch>0</horstretch>
