@@ -27,6 +27,8 @@ set(PROJECT_SOURCES
         src/account.h
         ui/mainwindow.ui
         ui/account-list-page.ui
+        ui/account-history-page.ui
+        ui/transfer-page.ui
 )
 
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/resources/resources.qrc")
