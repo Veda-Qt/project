@@ -17,6 +17,9 @@ public:
     explicit AccountHistoryPage(QWidget *parent = nullptr);
     ~AccountHistoryPage() override;
 
+public slots:
+    void loadHistory(int account_id);
+
 private:
     Ui::AccountHistoryPage *ui;
 };

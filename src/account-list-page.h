@@ -2,6 +2,8 @@
 #define ACCOUNTLISTPAGE_H
 
 #include <QWidget>
+#include <QStandardItemModel>
+#include "account-model.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -16,12 +18,18 @@ class AccountListPage : public QWidget
 public:
     explicit AccountListPage(QWidget *parent = nullptr);
     ~AccountListPage() override;
+    QAbstractItemModel *getModel() const;
+    void setAccountData(const QList<Account> &data);
 
 signals:
-    void account_selected(int account_id);
+    void accountSelected(int account_id);
+
+private slots:
+    void on_lview_acnt_doubleClicked(const QModelIndex &index);
 
 private:
     Ui::AccountListPage *ui;
+    AccountModel *model;
 };
 
 #endif // ACCOUNTLISTPAGE_H

@@ -17,12 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->stackedWidget->setCurrentWidget(account_list_page);
 
-    connect(account_list_page, &AccountListPage::account_selected,
+    connect(account_list_page, &AccountListPage::accountSelected,
             this, &MainWindow::on_account_clicked);
-    // connect(account_list_page, &AccountListPage::account_selected,
-    //         this, &MainWindow::on_account_clicked);
-    // connect(account_list_page, &AccountListPage::account_selected,
-    //         this, &MainWindow::on_account_clicked);
 }
 
 MainWindow::~MainWindow()
@@ -32,4 +28,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_account_clicked(int account_id)
 {
+    account_history_page->loadHistory(account_id);
+    ui->stackedWidget->setCurrentWidget(account_history_page);
 }
