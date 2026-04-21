@@ -91,7 +91,7 @@
          <height>101</height>
         </rect>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <layout class="QHBoxLayout" name="hlay0">
         <item>
          <widget class="QPushButton" name="btn_adduser">
           <property name="sizePolicy">
