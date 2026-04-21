@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>free_back_icon.png</file>
+    </qresource>
+</RCC>
