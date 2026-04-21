@@ -40,6 +40,12 @@
     </property>
     <item>
      <widget class="QLabel" name="lbl_msg">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="font">
        <font>
         <pointsize>16</pointsize>
@@ -89,17 +95,23 @@
           <pointsize>20</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background: transparent;
+}</string>
+        </property>
         <property name="text">
-         <string>Cancel</string>
+         <string/>
         </property>
         <property name="icon">
          <iconset resource="../resources.qrc">
-          <normaloff>:/resources/free_cancel_icon.png</normaloff>:/resources/free_cancel_icon.png</iconset>
+          <normaloff>:/resources/ai_generated_cancel_button_icon.png</normaloff>:/resources/ai_generated_cancel_button_icon.png</iconset>
         </property>
         <property name="iconSize">
          <size>
-          <width>50</width>
-          <height>50</height>
+          <width>200</width>
+          <height>100</height>
          </size>
         </property>
        </widget>
@@ -117,17 +129,23 @@
           <pointsize>20</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background: transparent;
+}</string>
+        </property>
         <property name="text">
-         <string>Confirm</string>
+         <string/>
         </property>
         <property name="icon">
          <iconset resource="../resources.qrc">
-          <normaloff>:/resources/free_confirm_icon.png</normaloff>:/resources/free_confirm_icon.png</iconset>
+          <normaloff>:/resources/ai_generated_confirm_button_icon.png</normaloff>:/resources/ai_generated_confirm_button_icon.png</iconset>
         </property>
         <property name="iconSize">
          <size>
-          <width>50</width>
-          <height>50</height>
+          <width>200</width>
+          <height>100</height>
          </size>
         </property>
        </widget>
