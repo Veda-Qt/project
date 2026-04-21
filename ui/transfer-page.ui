@@ -51,28 +51,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QComboBox" name="combobox_bank">
-      <item>
-       <property name="text">
-        <string>test1</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>test2</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>bank1</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>bank2</string>
-       </property>
-      </item>
-     </widget>
+     <widget class="QComboBox" name="combobox_bank"/>
     </item>
     <item>
      <widget class="QLineEdit" name="ledit_acnt_num"/>
