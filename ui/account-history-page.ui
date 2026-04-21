@@ -56,6 +56,12 @@
           <pointsize>20</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background: transparent;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -86,6 +92,12 @@
          <font>
           <pointsize>16</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    border: none;
+    background: transparent;
+}</string>
         </property>
         <property name="text">
          <string>생활계좌 100200-30-405060</string>
@@ -143,6 +155,12 @@
           <pointsize>16</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    border: none;
+    background: transparent;
+}</string>
+        </property>
         <property name="text">
          <string>2026.03.20~2026.04.20</string>
         </property>
@@ -150,6 +168,12 @@
       </item>
       <item>
        <widget class="QLabel" name="lbl_blnk2">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    border: none;
+    background: transparent;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>

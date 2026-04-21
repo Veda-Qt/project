@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(://white_background.png);</string>
+   <string notr="true">background-image: url(:/resources/white_background.png);</string>
   </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
@@ -60,6 +60,12 @@
         <pointsize>20</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+    border: none;
+    background: transparent;
+}</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::Shape::StyledPanel</enum>
       </property>
@@ -88,7 +94,7 @@
          <x>0</x>
          <y>0</y>
          <width>699</width>
-         <height>393</height>
+         <height>395</height>
         </rect>
        </property>
        <widget class="QListView" name="lview_acnt">
