@@ -8,5 +8,7 @@
         <file>resources/free_login_mark_icon.png</file>
         <file>resources/white_background.png</file>
         <file>resources/ai_generated_transfer_button_icon.png</file>
+        <file>resources/ai_generated_cancel_button_icon.png</file>
+        <file>resources/ai_generated_confirm_button_icon.png</file>
     </qresource>
 </RCC>
