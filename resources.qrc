@@ -1,17 +1,11 @@
 <RCC>
     <qresource prefix="/">
-        <file>resources/free_adduser_icon.png</file>
-        <file>resources/free_back_icon.png</file>
-        <file>resources/free_cancel_icon.png</file>
-        <file>resources/free_confirm_icon.png</file>
-        <file>resources/free_login_button_icon.png</file>
-        <file>resources/free_login_mark_icon.png</file>
-        <file>resources/white_background.png</file>
-        <file>resources/ai_generated_transfer_button_icon.png</file>
-        <file>resources/ai_generated_cancel_button_icon.png</file>
-        <file>resources/ai_generated_confirm_button_icon.png</file>
-        <file>resources/ai_generated_adduser_button_icon.png</file>
-        <file>resources/ai_generated_back_button_icon.png</file>
-        <file>resources/ai_generated_login_button_icon.png</file>
+        <file>resources/ai-generated-adduser-button-icon.png</file>
+        <file>resources/ai-generated-back-button-icon.png</file>
+        <file>resources/ai-generated-cancel-button-icon.png</file>
+        <file>resources/ai-generated-confirm-button-icon.png</file>
+        <file>resources/ai-generated-login-button-icon.png</file>
+        <file>resources/ai-generated-transfer-button-icon.png</file>
+        <file>resources/white-background.png</file>
     </qresource>
 </RCC>
