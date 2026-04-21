@@ -21,7 +21,11 @@ public:
     ~MainWindow() override;
 
 public slots:
-    void on_account_selected(int account_id);
+    void showAccountList();
+    void showAccountList(const QString &owner_id);
+    void showAccountHistory();
+    void showAccountHistory(const Account &account);
+    void showTransfer();
 
 private:
     Ui::MainWindow *ui;

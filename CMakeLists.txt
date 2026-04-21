@@ -28,11 +28,19 @@ set(PROJECT_SOURCES
 
         src/models/account-model.cpp
         src/models/account-model.h
+        src/models/history-model.cpp
+        src/models/history-model.h
+        src/models/transfer-model.cpp
+        src/models/transfer-model.h
 
         src/cores/account.h
         src/cores/history.h
         src/cores/account-manager.cpp
         src/cores/account-manager.h
+        src/cores/history-manager.cpp
+        src/cores/history-manager.h
+        src/cores/transfer-manager.cpp
+        src/cores/transfer-manager.h
 
         ui/mainwindow.ui
         ui/account-list-page.ui

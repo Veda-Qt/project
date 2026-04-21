@@ -1,35 +1,35 @@
-#ifndef ACCOUNTMODEL_H
-#define ACCOUNTMODEL_H
+#ifndef TRANSFER_MODEL_H
+#define TRANSFER_MODEL_H
 
 #include <QAbstractListModel>
+#include <QList>
 #include "../cores/account.h"
 
-class AccountModel : public QAbstractListModel
+class TransferModel : public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    enum AccountRoles {
-        IdRole = Qt::UserRole + 1,
-        NumberRole,
+    enum TransferRoles {
+        NumberRole = Qt::UserRole + 1,
         OwnerNameRole,
         BankNameRole,
-        BalanceRole,
         ObjectRole = Qt::UserRole + 100
     };
 
-    explicit AccountModel(QObject *parent = nullptr) : QAbstractListModel(parent) {}
-    ~AccountModel() override;
+    explicit TransferModel(QObject *parent = nullptr) : QAbstractListModel(parent) {}
+    ~TransferModel() override;
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+
     Account getAccount(int row) const;
 
 public slots:
-    void fetchData(const QString &owner_id);
+    void fetchData();
 
 private:
     QList<Account *> accounts;
 };
 
-#endif // ACCOUNTMODEL_H
+#endif // TRANSFER_MODEL_H
