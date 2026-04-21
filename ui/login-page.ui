@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="lbl_login">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -31,7 +31,7 @@
     <string>로그인하기</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="ledit_id">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -44,7 +44,7 @@
     <string>아이디</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="ledit_pw">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -57,7 +57,7 @@
     <string>비밀번호</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btn_login">
    <property name="geometry">
     <rect>
      <x>340</x>
