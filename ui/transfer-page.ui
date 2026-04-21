@@ -46,18 +46,30 @@
        </font>
       </property>
       <property name="text">
-       <string>누구에게 보낼까요???</string>
+       <string>어디로 보낼까요?</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QComboBox" name="combobox_bank"/>
+     <widget class="QComboBox" name="combobox_bank">
+      <property name="placeholderText">
+       <string>은행을 선택하세요.</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="ledit_acnt_num"/>
+     <widget class="QLineEdit" name="ledit_acnt_num">
+      <property name="placeholderText">
+       <string>계좌번호</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="ledit_money"/>
+     <widget class="QLineEdit" name="ledit_money">
+      <property name="placeholderText">
+       <string>금액</string>
+      </property>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="hlay4_tranfer">
@@ -65,21 +77,34 @@
        <number>10</number>
       </property>
       <item>
-     <widget class="QPushButton" name="btn_back2">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-         </sizepolicy> </property>
+       <widget class="QPushButton" name="btn_back2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="font">
-       <font> <pointsize>20</pointsize> </font>
-    </property>
-    <property name="text">
-    <string>Back</string>
-   </property>
-  </widget>
- </item>
-<item>
+         <font>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources.qrc">
+          <normaloff>:/resources/free_cancel_icon.png</normaloff>:/resources/free_cancel_icon.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>50</width>
+          <height>50</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="btn_ok">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
@@ -94,6 +119,16 @@
         </property>
         <property name="text">
          <string>Confirm</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources.qrc">
+          <normaloff>:/resources/free_confirm_icon.png</normaloff>:/resources/free_confirm_icon.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>50</width>
+          <height>50</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -112,6 +147,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
