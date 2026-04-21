@@ -70,16 +70,16 @@
        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
         <horstretch>0</horstretch>
          <verstretch>0</verstretch>
-          </sizepolicy> </property>
-         <property name="font">
-        <font> <pointsize>20</pointsize> </font>
-     </property>
-     <property name="text">
-     <string>Back</string>
+         </sizepolicy> </property>
+        <property name="font">
+       <font> <pointsize>20</pointsize> </font>
     </property>
-   </widget>
-  </item>
- <item>
+    <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>
+ </item>
+<item>
        <widget class="QPushButton" name="btn_ok">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
