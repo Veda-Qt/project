@@ -22,7 +22,7 @@
      <height>501</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="vlay3" stretch="0,1,1,1,2,0">
+   <layout class="QVBoxLayout" name="vlay3" stretch="0,2,2,2,0,5">
     <property name="leftMargin">
      <number>50</number>
     </property>
@@ -72,30 +72,10 @@
      </widget>
     </item>
     <item>
-     <widget class="QTextEdit" name="tedit_acnt_num">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="placeholderText">
-       <string>계좌번호를 입력하세요...</string>
-      </property>
-     </widget>
+     <widget class="QLineEdit" name="ledit_acnt_num"/>
     </item>
     <item>
-     <widget class="QTextEdit" name="tedit_money">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="placeholderText">
-       <string>금액을 입력하세요...</string>
-      </property>
-     </widget>
+     <widget class="QLineEdit" name="ledit_money"/>
     </item>
     <item>
      <layout class="QHBoxLayout" name="hlay4_tranfer">
