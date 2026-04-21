@@ -67,12 +67,12 @@
         </property>
         <property name="icon">
          <iconset resource="../resources.qrc">
-          <normaloff>:/resources/free_back_icon.png</normaloff>:/resources/free_back_icon.png</iconset>
+          <normaloff>:/resources/ai_generated_back_button_icon.png</normaloff>:/resources/ai_generated_back_button_icon.png</iconset>
         </property>
         <property name="iconSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+          <width>50</width>
+          <height>50</height>
          </size>
         </property>
         <property name="autoDefault">
