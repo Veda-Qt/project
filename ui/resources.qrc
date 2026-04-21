@@ -2,5 +2,8 @@
     <qresource prefix="/images">
         <file>free_back_icon.png</file>
         <file>white_background.png</file>
+        <file>free_adduser_icon.png</file>
+        <file>free_login_button_icon.png</file>
+        <file>free_login_mark_icon.png</file>
     </qresource>
 </RCC>
