@@ -35,19 +35,19 @@
        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>로그인하기</string>
-      </property>
-     </widget>
-    </item>
-    <item>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>로그인하기</string>
+     </property>
+    </widget>
+   </item>
+   <item>
      <widget class="QLineEdit" name="ledit_id">
       <property name="placeholderText">
        <string>아이디</string>
