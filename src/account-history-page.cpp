@@ -12,3 +12,8 @@ AccountHistoryPage::~AccountHistoryPage()
 {
     delete ui;
 }
+
+void AccountHistoryPage::loadHistory(int account_id)
+{
+
+}
