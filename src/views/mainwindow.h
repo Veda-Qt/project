@@ -21,7 +21,7 @@ public:
     ~MainWindow() override;
 
 public slots:
-    void on_account_clicked(int account_id);
+    void on_account_selected(int account_id);
 
 private:
     Ui::MainWindow *ui;

@@ -3,7 +3,8 @@
 
 #include <QWidget>
 #include <QStandardItemModel>
-#include "account-model.h"
+#include "../models/account-model.h"
+#include "../cores/account-manager.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -18,8 +19,8 @@ class AccountListPage : public QWidget
 public:
     explicit AccountListPage(QWidget *parent = nullptr);
     ~AccountListPage() override;
+
     QAbstractItemModel *getModel() const;
-    void setAccountData(const QList<Account> &data);
 
 signals:
     void accountSelected(int account_id);
