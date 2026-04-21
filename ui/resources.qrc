@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/images">
+    <qresource prefix="/">
         <file>free_back_icon.png</file>
         <file>white_background.png</file>
         <file>free_adduser_icon.png</file>
