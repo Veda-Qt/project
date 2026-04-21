@@ -68,6 +68,17 @@
         <property name="flat">
          <bool>false</bool>
         </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>free_back_icon.png</normaloff>
+         </iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
        </widget>
       </item>
       <item>
