@@ -4,6 +4,31 @@
 #include <QString>
 #include <QLocale>
 
+enum Bank {
+    KB,
+    Shinhan,
+    Woori,
+    Hana,
+    NH,
+    Kakao,
+    Toss
+};
+
+class BankHelper {
+public:
+    static QString toString(Bank bank) {
+        switch(bank) {
+        case Bank::KB: return "국민은행";
+        case Bank::Shinhan: return "신한은행";
+        case Bank::Woori: return "우리은행";
+        case Bank::Hana: return "하나은행";
+        case Bank::NH: return "농협은행";
+        case Bank::Kakao: return "카카오뱅크";
+        default: return "알 수 없음";
+        }
+    }
+};
+
 class Account
 {
 public:

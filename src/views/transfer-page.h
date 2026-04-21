@@ -20,7 +20,9 @@ public:
     ~TransferPage() override;
 
 signals:
+    // switch to history page.
     void backRequested();
+    // request transfer at this account.
     void transferRequested(const QString &target_number, long long amount);
 
 private slots:
