@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/resources/white_background.png);</string>
+   <string notr="true">background-image: url(:/resources/white-background.png);</string>
   </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
@@ -67,7 +67,7 @@
         </property>
         <property name="icon">
          <iconset resource="../resources.qrc">
-          <normaloff>:/resources/ai_generated_back_button_icon.png</normaloff>:/resources/ai_generated_back_button_icon.png</iconset>
+          <normaloff>:/resources/ai-generated-back-button-icon.png</normaloff>:/resources/ai-generated-back-button-icon.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -128,7 +128,7 @@
         </property>
         <property name="icon">
          <iconset resource="../resources.qrc">
-          <normaloff>:/resources/ai_generated_transfer_button_icon.png</normaloff>:/resources/ai_generated_transfer_button_icon.png</iconset>
+          <normaloff>:/resources/ai-generated-transfer-button-icon.png</normaloff>:/resources/ai-generated-transfer-button-icon.png</iconset>
         </property>
         <property name="iconSize">
          <size>
