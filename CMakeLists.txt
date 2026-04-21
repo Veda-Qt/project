@@ -16,17 +16,28 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/ui)
 
 set(PROJECT_SOURCES
         src/main.cpp
-        src/mainwindow.cpp
-        src/mainwindow.h
-        src/account-list-page.cpp
-        src/account-list-page.h
-        src/account-history-page.cpp
-        src/account-history-page.h
-        src/transfer-page.cpp
-        src/transfer-page.h
+
+        src/views/mainwindow.cpp
+        src/views/mainwindow.h
+        src/views/account-list-page.cpp
+        src/views/account-list-page.h
+        src/views/account-history-page.cpp
+        src/views/account-history-page.h
+        src/views/transfer-page.cpp
+        src/views/transfer-page.h
+
+        src/models/account-model.cpp
+        src/models/account-model.h
+
+        src/cores/account.h
+        src/cores/history.h
+        src/cores/account-manager.cpp
+        src/cores/account-manager.h
 
         ui/mainwindow.ui
         ui/account-list-page.ui
+        ui/account-history-page.ui
+        ui/transfer-page.ui
 )
 
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/resources/resources.qrc")
@@ -37,11 +48,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(project
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        src/account.h
-        src/account-list-page.h
-        src/account-list-page.cpp
-        ui/account-history-page.ui
-        ui/transfer-page.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET project APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

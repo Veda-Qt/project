@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->stackedWidget->setCurrentWidget(account_list_page);
 
     connect(account_list_page, &AccountListPage::accountSelected,
-            this, &MainWindow::on_account_clicked);
+            this, &MainWindow::on_account_selected);
 }
 
 MainWindow::~MainWindow()
@@ -26,8 +26,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_account_clicked(int account_id)
+void MainWindow::on_account_selected(int account_id)
 {
-    account_history_page->loadHistory(account_id);
     ui->stackedWidget->setCurrentWidget(account_history_page);
 }
