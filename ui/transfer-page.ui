@@ -25,7 +25,7 @@
      <height>501</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="vlay3" stretch="0,2,2,2,0,5">
+   <layout class="QVBoxLayout" name="vlay3" stretch="0,2,2,0,0,5">
     <property name="leftMargin">
      <number>50</number>
     </property>
@@ -48,6 +48,7 @@
       </property>
       <property name="font">
        <font>
+        <family>Noto Sans KR</family>
         <pointsize>16</pointsize>
        </font>
       </property>
@@ -64,16 +65,16 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="ledit_acnt_num">
+     <widget class="QLineEdit" name="ledit_money">
       <property name="placeholderText">
-       <string>계좌번호</string>
+       <string>금액</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="ledit_money">
+     <widget class="QLineEdit" name="ledit_acnt_num">
       <property name="placeholderText">
-       <string>금액</string>
+       <string>계좌번호</string>
       </property>
      </widget>
     </item>
