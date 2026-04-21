@@ -1,3 +1,11 @@
 <RCC>
-    <qresource prefix="/"/>
+    <qresource prefix="/">
+        <file>resources/free_adduser_icon.png</file>
+        <file>resources/free_back_icon.png</file>
+        <file>resources/free_cancel_icon.png</file>
+        <file>resources/free_confirm_icon.png</file>
+        <file>resources/free_login_button_icon.png</file>
+        <file>resources/free_login_mark_icon.png</file>
+        <file>resources/white_background.png</file>
+    </qresource>
 </RCC>
