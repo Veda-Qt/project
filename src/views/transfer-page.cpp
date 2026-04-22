@@ -41,7 +41,7 @@ void TransferPage::on_btn_back_clicked()
 void TransferPage::on_btn_ok_clicked()
 {
     QString target_number = ui->ledit_acnt_num->text().trimmed();
-    Bank bank_enum = static_cast<Bank>(ui->combobox_bank->currentData().toInt());
+    QString bank_name = ui->combobox_bank->currentText();
     QString amount_str = ui->ledit_money->text().trimmed();
 
     if (target_number.isEmpty() || amount_str.isEmpty()) {
@@ -50,7 +50,7 @@ void TransferPage::on_btn_ok_clicked()
     }
 
     if (ui->combobox_bank->currentIndex() == -1) {
-        qWarning() << "Select no bank.";
+        qWarning() << "Select bank.";
         return;
     }
 
@@ -61,7 +61,7 @@ void TransferPage::on_btn_ok_clicked()
         return;
     }
 
-    emit transferRequested(target_number, amount);
+    emit transferRequested(target_number, bank_name, amount);
 }
 
 void TransferPage::on_lview_acnt_histry_doubleClicked(const QModelIndex &index)

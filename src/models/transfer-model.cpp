@@ -1,4 +1,7 @@
+#include <QSet>
 #include "transfer-model.h"
+#include "../cores/db-manager.h"
+#include "../cores/transfer-manager.h"
 
 TransferModel::~TransferModel()
 {
@@ -52,9 +55,26 @@ void TransferModel::fetchData()
     qDeleteAll(accounts);
     accounts.clear();
 
-    // TODO
-    accounts.append(new Account("987-654-321", "김범수", "신한은행"));
-    accounts.append(new Account("111-222-333", "아이유", "국민은행"));
+    QString sender_number = TransferManager::instance().getSenderAccount().getNumber();
+    QJsonObject conditions;
+    conditions["number"] = sender_number;
+    conditions["type"] = "이체";
+
+    const QJsonArray json_recent = DbManager::instance().selectItems("histories", conditions);
+    QSet<QString> s_accounts;
+
+    for (int i = json_recent.size() - 1; i >= 0; --i) {
+        QJsonObject obj = json_recent[i].toObject();
+
+        QString origin_number = obj["origin_number"].toString();
+        QString bank_name = obj["origin_bank_name"].toString();
+        QString origin_name = obj["origin_name"].toString();
+
+        if (!s_accounts.contains(origin_number)) {
+            s_accounts.insert(origin_number);
+            accounts.append(new Account(origin_number, origin_name, bank_name));
+        }
+    }
 
     endResetModel();
 }

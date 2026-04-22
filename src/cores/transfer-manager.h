@@ -14,8 +14,9 @@ public:
 
     // init member
     void setSenderAccount(const Account &account);
+    Account getSenderAccount() const;
     void loadRecentTransfers();
-    void requestTransfer(const QString &target_number, long long amount);
+    void requestTransfer(const QString &target_number, const QString &target_bank_name, long long amount);
     TransferModel *getModel() const;
 
 signals:

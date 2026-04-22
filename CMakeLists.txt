@@ -63,6 +63,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(project
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        src/views/add-account-dialog.h
+        src/views/add-account-dialog.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET project APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

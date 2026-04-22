@@ -23,7 +23,7 @@ signals:
     // switch to history page.
     void backRequested();
     // request transfer at this account.
-    void transferRequested(const QString &target_number, long long amount);
+    void transferRequested(const QString &target_number, const QString &target_bank_name, long long amount);
 
 private slots:
     void on_btn_back_clicked();

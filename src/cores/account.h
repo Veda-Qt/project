@@ -48,6 +48,7 @@ public:
     QString getBankName() const { return bank_name; }
     long long getBalance() const { return balance; }
     QString getFormattedBalance() const { return QLocale(QLocale::Korean).toString(balance); }
+    void setBalance(long long balance) { this->balance = balance; }
 
 private:
     QString number;

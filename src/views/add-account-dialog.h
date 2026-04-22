@@ -1,0 +1,4 @@
+#ifndef ADD_ACCOUNT_DIALOG_H
+#define ADD_ACCOUNT_DIALOG_H
+
+#endif // ADD_ACCOUNT_DIALOG_H
