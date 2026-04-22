@@ -1,3 +1,4 @@
+#include <QMessageBox>
 #include "transfer-page.h"
 #include "./ui_transfer-page.h"
 #include "../cores/transfer-manager.h"
@@ -26,6 +27,12 @@ TransferPage::TransferPage(QWidget *parent)
 
     connect(this, &TransferPage::transferRequested,
             &TransferManager::instance(), &TransferManager::requestTransfer);
+
+    connect(&TransferManager::instance(), &TransferManager::transferSuccess,
+            this, &TransferPage::on_transferSuccess);
+
+    connect(&TransferManager::instance(), &TransferManager::transferFailed,
+            this, &TransferPage::on_transferFailed);
 }
 
 TransferPage::~TransferPage()
@@ -76,3 +83,16 @@ void TransferPage::on_lview_acnt_histry_doubleClicked(const QModelIndex &index)
     ui->ledit_acnt_num->setText(target_account.getNumber());
 }
 
+void TransferPage::on_transferSuccess()
+{
+    QMessageBox::information(this, "이체 성공", "이체가 성공적으로 완료되었습니다.");
+    ui->ledit_acnt_num->clear();
+    ui->ledit_money->clear();
+    ui->combobox_bank->setCurrentIndex(-1);
+    emit backRequested();
+}
+
+void TransferPage::on_transferFailed(const QString &errorMessage)
+{
+    QMessageBox::warning(this, "이체 실패", errorMessage);
+}

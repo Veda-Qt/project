@@ -54,7 +54,8 @@ void LoginPage::on_btn_login_clicked()
         ui->ledit_id->clear();
         ui->ledit_pw->clear();
 
-        emit loginSuccess(this->id);
+        qDebug() << "id: " << id << ", pwd: " << pwd;
+        emit loginSuccess(id);
     } else {
         ui->lbl_message->setStyleSheet("color: red;");
         ui->lbl_message->setText("아이디 또는 비밀번호가 일치하지 않습니다.");
@@ -67,10 +68,8 @@ bool LoginPage::checkUser(const QString &id, const QString &pwd)
     conditions["id"] = id;
     conditions["pwd"] = pwd;
 
-    // DbManager에게 "users 테이블에서 id랑 pwd 둘 다 일치하는 녀석 찾아와!" 라고 명령
     QJsonArray users = DbManager::instance().selectItems("users", conditions);
 
-    // 배열이 비어있지 않다 = 일치하는 유저가 존재한다!
     return !users.isEmpty();
 }
 

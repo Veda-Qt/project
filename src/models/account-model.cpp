@@ -24,7 +24,7 @@ QVariant AccountModel::data(const QModelIndex &index, int role) const
     case ObjectRole:
         return QVariant::fromValue(account);
     case Qt::DisplayRole:
-        return QString("%1 %2 | 잔액: [%3]원").arg(account->getNumber())
+        return QString("%1 %2 | 잔액: %3원").arg(account->getNumber())
                                              .arg(account->getBankName())
                                              .arg(account->getFormattedBalance());
     }

@@ -25,12 +25,12 @@
      <height>501</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="vlay1" stretch="0,0">
+   <layout class="QVBoxLayout" name="vlay1" stretch="0,0,0,0">
     <property name="spacing">
      <number>10</number>
     </property>
     <property name="sizeConstraint">
-     <enum>QLayout::SizeConstraint::SetMinimumSize</enum>
+     <enum>QLayout::SetMinimumSize</enum>
     </property>
     <property name="leftMargin">
      <number>50</number>
@@ -68,19 +68,33 @@
 }</string>
       </property>
       <property name="frameShape">
-       <enum>QFrame::Shape::StyledPanel</enum>
+       <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Shadow::Plain</enum>
+       <enum>QFrame::Plain</enum>
       </property>
       <property name="text">
        <string>계좌를 선택하세요</string>
       </property>
       <property name="textFormat">
-       <enum>Qt::TextFormat::AutoText</enum>
+       <enum>Qt::AutoText</enum>
       </property>
       <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn_acnt_add_dialog">
+      <property name="text">
+       <string>계좌 추가</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn_acnt_del_dialog">
+      <property name="text">
+       <string>계좌 삭제</string>
       </property>
      </widget>
     </item>
@@ -101,7 +115,7 @@
          <x>0</x>
          <y>0</y>
          <width>701</width>
-         <height>402</height>
+         <height>343</height>
         </rect>
        </property>
        <widget class="QListView" name="lview_acnt">

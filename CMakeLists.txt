@@ -27,6 +27,10 @@ set(PROJECT_SOURCES
         src/views/transfer-page.h
         src/views/login-page.cpp
         src/views/login-page.h
+        src/views/add-account-dialog.cpp
+        src/views/add-account-dialog.h
+        src/views/remove-account-page.cpp
+        src/views/remove-account-dialog.h
 
         src/models/account-model.cpp
         src/models/account-model.h
@@ -51,6 +55,8 @@ set(PROJECT_SOURCES
         ui/account-list-page.ui
         ui/account-history-page.ui
         ui/transfer-page.ui
+        ui/add-account-dialog.ui
+        ui/remove-account-dialog.ui
 
         resources.qrc
 )
@@ -63,8 +69,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(project
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        src/views/add-account-dialog.h
-        src/views/add-account-dialog.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET project APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -32,7 +32,7 @@ QVariant TransferModel::data(const QModelIndex &index, int role) const
     case ObjectRole:
         return QVariant::fromValue(account);
     case Qt::DisplayRole:
-        return QString("%1 %2 | (%3)").arg(account->getOwnerName(),
+        return QString("%1 %2 %3").arg(account->getOwnerName(),
                                          account->getBankName(),
                                          account->getNumber());
     }

@@ -24,6 +24,8 @@ signals:
 
 private slots:
     void on_lview_acnt_doubleClicked(const QModelIndex &index);
+    void on_btn_acnt_add_dialog_clicked();
+    void on_btn_acnt_del_dialog_clicked();
 
 private:
     Ui::AccountListPage *ui;

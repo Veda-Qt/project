@@ -29,7 +29,8 @@ private slots:
     void on_btn_back_clicked();
     void on_btn_ok_clicked();
     void on_lview_acnt_histry_doubleClicked(const QModelIndex &index);
-
+    void on_transferSuccess();
+    void on_transferFailed(const QString &errorMessage);
 private:
     Ui::TransferPage *ui;
 };

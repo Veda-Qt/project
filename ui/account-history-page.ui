@@ -109,7 +109,7 @@
     </item>
     <item>
      <layout class="QHBoxLayout" name="hlay2_hstry" stretch="2,14">
-      <item alignment="Qt::AlignmentFlag::AlignVCenter">
+      <item alignment="Qt::AlignVCenter">
        <widget class="QPushButton" name="btn_transfer">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -164,7 +164,7 @@
 }</string>
         </property>
         <property name="text">
-         <string>2026.03.20~2026.04.20</string>
+         <string/>
         </property>
        </widget>
       </item>
