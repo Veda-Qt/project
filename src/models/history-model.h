@@ -2,17 +2,33 @@
 #define HISTORY_MODEL_H
 
 #include <QAbstractListModel>
+#include <QModelIndex>
 #include "../cores/history.h"
 
 class HistoryModel : public QAbstractListModel
 {
-public:
-    enum HistoryRoles {};
+    Q_OBJECT
 
-    explicit HistoryModel(QObject *parent = nullptr) : QAbstractListModel(parent) {};
+public:
+    enum HistoryRoles {
+        NumberRole = Qt::UserRole + 1,
+        HistoryIdRole,
+        OriginNameRole,
+        TypeRole,
+        TimeRole,
+        AmountRole,
+        BalanceRole,
+        ObjectRole = Qt::UserRole + 100
+    };
+
+    explicit HistoryModel(QObject *parent = nullptr) : QAbstractListModel(parent) {}
+    ~HistoryModel() override;
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+
+public slots:
+    void fetchData(const QString &number);
 
 private:
     QList<History *> histories;

@@ -2,7 +2,7 @@
 #define ACCOUNT_MANAGER_H
 
 #include <QObject>
-#include "account.h"
+#include "../models/account-model.h"
 
 class AccountManager : public QObject
 {
@@ -11,19 +11,18 @@ class AccountManager : public QObject
 public:
     static AccountManager &instance();
 
-    void loadAccounts();
-    void addAccount(Account *account);
-    const QList<Account *> &getAccounts() const { return accounts; }
+    void loadAccounts(const QString &owner_id);
+    QString getOwnerId() const;
+    AccountModel *getModel() const;
 
 signals:
-    void accountsChanged();
+    // void accountsChanged();
 
 private:
-    AccountManager(QObject *parent = nullptr) : QObject(parent) {}
-    ~AccountManager();
+    explicit AccountManager(QObject *parent = nullptr) : QObject(parent), model(new AccountModel(this)) {}
 
-    QList<Account *> accounts;
-
+    QString owner_id;
+    AccountModel *model = nullptr;
 };
 
 #endif // ACCOUNT_MANAGER_H
