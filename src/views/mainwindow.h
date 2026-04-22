@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "login-page.h"
 #include "account-list-page.h"
 #include "account-history-page.h"
 #include "transfer-page.h"
@@ -29,6 +30,7 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
+    LoginPage *login_page;
     AccountListPage *account_list_page;
     AccountHistoryPage *account_history_page;
     TransferPage *transfer_page;

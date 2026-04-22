@@ -1,5 +1,5 @@
 #include "history-model.h"
-
+#include "../cores/db-manager.h"
 
 HistoryModel::~HistoryModel()
 {
@@ -40,10 +40,27 @@ void HistoryModel::fetchData(const QString &number)
     qDeleteAll(histories);
     histories.clear();
 
-    // TODO: fetch data from DB.
-    histories.append(new History("1", "333312345", "커피박스", "출금", QDateTime::currentDateTime(), 3000, 25000));
-    histories.append(new History("1", "3345342345", "박건영", "입금", QDateTime::currentDateTime(), 5000, 20000));
-    histories.append(new History("2", "333312345", "싸다김밥", "출금", QDateTime::currentDateTime(), 5000, 20000));
+    QJsonObject conditions;
+    conditions["number"] = number;
+
+    const QJsonArray json_histories = DbManager::instance().selectItems("histories", conditions);
+
+    for (const QJsonValue &value : json_histories) {
+        QJsonObject obj = value.toObject();
+
+        // watch out to write variable name.
+        QString number = obj["number"].toString();
+        QString history_id = obj["history_id"].toString();
+        QString origin_name = obj["origin_name"].toString();
+        QString type = obj["type"].toString(); // 입금 / 출금 / 이체 / 취소
+        QString timestamp_str = obj["timestamp"].toString();
+        QDateTime timestamp = QDateTime::fromString(timestamp_str, Qt::ISODate);
+        if (!timestamp.isValid()) continue;
+        long long amount = obj["amount"].toVariant().toLongLong();
+        long long balance = obj["balance"].toVariant().toLongLong();
+
+        histories.append(new History(number, history_id, origin_name, type, timestamp, amount, balance));
+    }
 
     endResetModel();
 }

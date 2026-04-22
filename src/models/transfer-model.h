@@ -29,7 +29,7 @@ public slots:
     void fetchData();
 
 private:
-    QList<Account *> accounts;
+    QList<Account *> accounts; // account data about recently trasfer
 };
 
 #endif // TRANSFER_MODEL_H

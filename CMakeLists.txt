@@ -25,6 +25,8 @@ set(PROJECT_SOURCES
         src/views/account-history-page.h
         src/views/transfer-page.cpp
         src/views/transfer-page.h
+        src/views/login-page.cpp
+        src/views/login-page.h
 
         src/models/account-model.cpp
         src/models/account-model.h
@@ -41,8 +43,11 @@ set(PROJECT_SOURCES
         src/cores/history-manager.h
         src/cores/transfer-manager.cpp
         src/cores/transfer-manager.h
+        src/cores/db-manager.h
+        src/cores/db-manager.cpp
 
         ui/mainwindow.ui
+        ui/login-page.ui
         ui/account-list-page.ui
         ui/account-history-page.ui
         ui/transfer-page.ui

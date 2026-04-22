@@ -58,4 +58,3 @@ void TransferModel::fetchData()
 
     endResetModel();
 }
-
