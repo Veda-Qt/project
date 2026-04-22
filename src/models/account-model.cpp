@@ -47,9 +47,9 @@ void AccountModel:: fetchData(const QString &owner_id)
     accounts.clear();
 
     // TODO: fetch data
-    accounts.append(new Account("qwer123", "333312345", "박건영", "국민은행", 50000000));
-    accounts.append(new Account("asdf777", "3345342345", "박건영", "토스은행", 10000));
-    accounts.append(new Account("gusese", "3212345", "홍진기", "우리은행", 23243513));
+    accounts.append(new Account("333312345", "qwer123", "박건영", "국민은행", 50000000));
+    accounts.append(new Account("3345342345", "asdf777", "박건영", "토스은행", 10000));
+    accounts.append(new Account("3212345", "gusese", "홍진기", "우리은행", 23243513));
 
     endResetModel();
 }

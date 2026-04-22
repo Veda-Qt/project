@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/resources/white-background.png);</string>
+  </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
@@ -22,7 +25,7 @@
      <height>501</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="vlay3" stretch="0,2,2,2,0,5">
+   <layout class="QVBoxLayout" name="vlay3" stretch="0,2,0,0,0,0">
     <property name="leftMargin">
      <number>50</number>
     </property>
@@ -37,45 +40,43 @@
     </property>
     <item>
      <widget class="QLabel" name="lbl_msg">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="font">
        <font>
+        <family>Noto Sans KR</family>
         <pointsize>16</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>누구에게 보낼까요???</string>
+       <string>어디로 보낼까요?</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QComboBox" name="combobox_bank">
-      <item>
-       <property name="text">
-        <string>test1</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>test2</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>bank1</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>bank2</string>
-       </property>
-      </item>
+      <property name="placeholderText">
+       <string>은행을 선택하세요.</string>
+      </property>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="ledit_acnt_num"/>
+     <widget class="QLineEdit" name="ledit_acnt_num">
+      <property name="placeholderText">
+       <string>계좌번호</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="ledit_money"/>
+     <widget class="QLineEdit" name="ledit_money">
+      <property name="placeholderText">
+       <string>금액</string>
+      </property>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="hlay4_tranfer">
@@ -83,7 +84,7 @@
        <number>10</number>
       </property>
       <item>
-       <widget class="QPushButton" name="btn_back2">
+       <widget class="QPushButton" name="btn_back">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -95,8 +96,24 @@
           <pointsize>20</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background: transparent;
+}</string>
+        </property>
         <property name="text">
-         <string>Back</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources.qrc">
+          <normaloff>:/resources/ai-generated-cancel-button-icon.png</normaloff>:/resources/ai-generated-cancel-button-icon.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>200</width>
+          <height>100</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -113,26 +130,37 @@
           <pointsize>20</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background: transparent;
+}</string>
+        </property>
         <property name="text">
-         <string>Confirm</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources.qrc">
+          <normaloff>:/resources/ai-generated-confirm-button-icon.png</normaloff>:/resources/ai-generated-confirm-button-icon.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>200</width>
+          <height>100</height>
+         </size>
         </property>
        </widget>
       </item>
      </layout>
     </item>
     <item>
-     <widget class="QTableView" name="tview_acnt_histry">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-     </widget>
+     <widget class="QListView" name="lview_acnt_histry"/>
     </item>
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

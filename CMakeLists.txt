@@ -46,6 +46,8 @@ set(PROJECT_SOURCES
         ui/account-list-page.ui
         ui/account-history-page.ui
         ui/transfer-page.ui
+
+        resources.qrc
 )
 
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/resources/resources.qrc")

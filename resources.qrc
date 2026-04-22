@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/ai-generated-adduser-button-icon.png</file>
+        <file>resources/ai-generated-back-button-icon.png</file>
+        <file>resources/ai-generated-cancel-button-icon.png</file>
+        <file>resources/ai-generated-confirm-button-icon.png</file>
+        <file>resources/ai-generated-login-button-icon.png</file>
+        <file>resources/ai-generated-transfer-button-icon.png</file>
+        <file>resources/white-background.png</file>
+    </qresource>
+</RCC>
