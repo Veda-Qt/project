@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/resources/white-background.png);</string>
+  </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
@@ -54,8 +57,15 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>20</pointsize>
+        <family>Noto Sans KR</family>
+        <pointsize>16</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+    border: none;
+    background: transparent;
+}</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::Shape::StyledPanel</enum>
@@ -64,7 +74,7 @@
        <enum>QFrame::Shadow::Plain</enum>
       </property>
       <property name="text">
-       <string>계좌를 선택하세요...</string>
+       <string>계좌를 선택하세요</string>
       </property>
       <property name="textFormat">
        <enum>Qt::TextFormat::AutoText</enum>
@@ -76,6 +86,12 @@
     </item>
     <item>
      <widget class="QScrollArea" name="scrlarea_acnt">
+      <property name="styleSheet">
+       <string notr="true">QScrollArea {
+    border: none;
+    background: transparent;
+}</string>
+      </property>
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
@@ -84,8 +100,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>699</width>
-         <height>393</height>
+         <width>701</width>
+         <height>402</height>
         </rect>
        </property>
        <widget class="QListView" name="lview_acnt">

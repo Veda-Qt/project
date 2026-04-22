@@ -10,17 +10,20 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    login_page = new LoginPage(this);
     account_list_page = new AccountListPage(this);
     account_history_page = new AccountHistoryPage(this);
     transfer_page = new TransferPage(this);
 
+    ui->stackedWidget->addWidget(login_page);
     ui->stackedWidget->addWidget(account_list_page);
     ui->stackedWidget->addWidget(account_history_page);
     ui->stackedWidget->addWidget(transfer_page);
 
-    ui->stackedWidget->setCurrentWidget(account_list_page);
-    // TEST: input dummy user_id
-    AccountManager::instance().loadAccounts("214");
+    ui->stackedWidget->setCurrentWidget(login_page);
+
+    connect(login_page, &LoginPage::loginSuccess,
+            this, qOverload<const QString &>(&MainWindow::showAccountList));
 
     connect(account_list_page, &AccountListPage::accountSelected,
             this, qOverload<const Account &>(&MainWindow::showAccountHistory));

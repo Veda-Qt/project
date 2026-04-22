@@ -1,4 +1,5 @@
 #include "account-model.h"
+#include "../cores/db-manager.h"
 
 AccountModel::~AccountModel()
 {
@@ -23,7 +24,7 @@ QVariant AccountModel::data(const QModelIndex &index, int role) const
     case ObjectRole:
         return QVariant::fromValue(account);
     case Qt::DisplayRole:
-        return QString("[%1] %2 | 잔액: %3원").arg(account->getNumber())
+        return QString("%1 %2 | 잔액: [%3]원").arg(account->getNumber())
                                              .arg(account->getBankName())
                                              .arg(account->getFormattedBalance());
     }
@@ -40,16 +41,29 @@ Account AccountModel::getAccount(int row) const
     return *(accounts.at(row));
 }
 
-void AccountModel:: fetchData(const QString &owner_id)
+void AccountModel::fetchData(const QString &owner_id)
 {
     beginResetModel();
     qDeleteAll(accounts);
     accounts.clear();
 
-    // TODO: fetch data
-    accounts.append(new Account("qwer123", "333312345", "박건영", "국민은행", 50000000));
-    accounts.append(new Account("asdf777", "3345342345", "박건영", "토스은행", 10000));
-    accounts.append(new Account("gusese", "3212345", "홍진기", "우리은행", 23243513));
+    QJsonObject conditions;
+    conditions["owner_id"] = owner_id;
+
+    const QJsonArray json_accounts = DbManager::instance().selectItems("accounts", conditions);
+
+    for (const QJsonValue &value : json_accounts) {
+        QJsonObject obj = value.toObject();
+
+        // watch out to write variable name.
+        QString number = obj["number"].toString();
+        QString id = obj["owner_id"].toString();
+        QString ownerName = obj["owner_name"].toString();
+        QString bankName = obj["bank_name"].toString();
+        long long balance = obj["balance"].toVariant().toLongLong();
+
+        accounts.append(new Account(number, id, ownerName, bankName, balance));
+    }
 
     endResetModel();
 }
