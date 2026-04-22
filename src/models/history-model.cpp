@@ -24,11 +24,11 @@ QVariant HistoryModel::data(const QModelIndex &index, int role) const
     case ObjectRole:
         return QVariant::fromValue(history);
     case Qt::DisplayRole:
-        return QString("%1 %2 %3 | %4 %5").arg(history->getType())
-                                          .arg(history->getOriginName())
-                                          .arg(history->getFormattedTimestamp())
-                                          .arg(history->getAmount())
-                                          .arg(history->getBalance());
+        return QString("%1 %2 %3 | %4원 잔액: %5원").arg(history->getType())
+                                                   .arg(history->getOriginName())
+                                                   .arg(history->getFormattedTimestamp())
+                                                   .arg(history->getAmount())
+                                                   .arg(history->getBalance());
     }
 
     return QVariant();

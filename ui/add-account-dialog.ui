@@ -14,6 +14,16 @@
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="0">
     <widget class="QLineEdit" name="ledit_name">
      <property name="text">
@@ -25,22 +35,9 @@
     </widget>
    </item>
    <item row="1" column="0">
-    <widget class="QLineEdit" name="ledit_bank_name">
-     <property name="text">
-      <string/>
-     </property>
+    <widget class="QComboBox" name="combobox_bank">
      <property name="placeholderText">
-      <string>은행명</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <string>은행을 선택하세요</string>
      </property>
     </widget>
    </item>

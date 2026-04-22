@@ -15,6 +15,14 @@ AddAccountDialog::AddAccountDialog(QWidget *parent)
 
     this->setModal(true);
     this->setWindowTitle("새 계좌 추가");
+
+    ui->combobox_bank->addItem(BankHelper::toString(Bank::KB), static_cast<int>(Bank::KB));
+    ui->combobox_bank->addItem(BankHelper::toString(Bank::Shinhan), static_cast<int>(Bank::Shinhan));
+    ui->combobox_bank->addItem(BankHelper::toString(Bank::Woori), static_cast<int>(Bank::Woori));
+    ui->combobox_bank->addItem(BankHelper::toString(Bank::Hana), static_cast<int>(Bank::Hana));
+    ui->combobox_bank->addItem(BankHelper::toString(Bank::NH), static_cast<int>(Bank::NH));
+    ui->combobox_bank->addItem(BankHelper::toString(Bank::Kakao), static_cast<int>(Bank::Kakao));
+    ui->combobox_bank->setCurrentIndex(-1);
 }
 
 AddAccountDialog::~AddAccountDialog()
@@ -44,7 +52,7 @@ QString AddAccountDialog::generateUniqueAccountNumber()
 void AddAccountDialog::accept()
 {
     QString name = ui->ledit_name->text().trimmed();
-    QString bank_name = ui->ledit_bank_name->text().trimmed();
+    QString bank_name = ui->combobox_bank->currentText();
 
     if (name.isEmpty() || bank_name.isEmpty()) {
         QMessageBox::warning(this, "입력 오류", "모든 항목을 입력해주세요.");

@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(://white_background.png);</string>
+   <string notr="true">background-image: url(:/resources/white-background.png);</string>
   </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
@@ -27,7 +27,7 @@
    </property>
    <layout class="QVBoxLayout" name="vlay0" stretch="0,0,0,0,0">
     <property name="sizeConstraint">
-     <enum>QLayout::SetDefaultConstraint</enum>
+     <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
     </property>
     <item>
      <widget class="QLabel" name="lbl_login">
@@ -39,6 +39,7 @@
       </property>
       <property name="font">
        <font>
+        <family>Noto Sans KR</family>
         <pointsize>16</pointsize>
        </font>
       </property>
@@ -79,7 +80,7 @@
        <string/>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -97,7 +98,7 @@
          <x>0</x>
          <y>0</y>
          <width>801</width>
-         <height>101</height>
+         <height>111</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="hlay0">
@@ -114,17 +115,23 @@
             <pointsize>16</pointsize>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    border: none;
+    background: transparent;
+}</string>
+          </property>
           <property name="text">
-           <string>회원가입</string>
+           <string/>
           </property>
           <property name="icon">
-           <iconset>
-            <normaloff>free_adduser_icon.png</normaloff>free_adduser_icon.png</iconset>
+           <iconset resource="../resources.qrc">
+            <normaloff>:/resources/ai-generated-adduser-button-icon.png</normaloff>:/resources/ai-generated-adduser-button-icon.png</iconset>
           </property>
           <property name="iconSize">
            <size>
-            <width>28</width>
-            <height>28</height>
+            <width>200</width>
+            <height>100</height>
            </size>
           </property>
          </widget>
@@ -149,22 +156,28 @@
            </font>
           </property>
           <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
+           <enum>Qt::LayoutDirection::LeftToRight</enum>
           </property>
           <property name="autoFillBackground">
            <bool>false</bool>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    border: none;
+    background: transparent;
+}</string>
+          </property>
           <property name="text">
-           <string>로그인</string>
+           <string/>
           </property>
           <property name="icon">
-           <iconset>
-            <normaloff>free_login_button_icon.png</normaloff>free_login_button_icon.png</iconset>
+           <iconset resource="../resources.qrc">
+            <normaloff>:/resources/ai-generated-login-button-icon.png</normaloff>:/resources/ai-generated-login-button-icon.png</iconset>
           </property>
           <property name="iconSize">
            <size>
-            <width>28</width>
-            <height>28</height>
+            <width>200</width>
+            <height>100</height>
            </size>
           </property>
          </widget>
@@ -176,6 +189,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

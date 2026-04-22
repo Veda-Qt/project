@@ -1,6 +1,7 @@
 #include <QMessageBox>
 #include "transfer-page.h"
 #include "./ui_transfer-page.h"
+#include "../cores/history-manager.h"
 #include "../cores/transfer-manager.h"
 #include "../models/transfer-model.h"
 
@@ -80,7 +81,13 @@ void TransferPage::on_lview_acnt_histry_doubleClicked(const QModelIndex &index)
 
     Account target_account = model->getAccount(index.row());
     qDebug() << "selected account: " << target_account.getNumber();
+
     ui->ledit_acnt_num->setText(target_account.getNumber());
+
+    int bank_index = ui->combobox_bank->findText(target_account.getBankName());
+    if (bank_index != -1) {
+        ui->combobox_bank->setCurrentIndex(bank_index);
+    }
 }
 
 void TransferPage::on_transferSuccess()

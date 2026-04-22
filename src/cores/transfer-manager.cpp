@@ -1,3 +1,4 @@
+#include "history-manager.h"
 #include "transfer-manager.h"
 #include "../cores/db-manager.h"
 
@@ -44,12 +45,10 @@ void TransferManager::requestTransfer(const QString &target_number, const QStrin
         return;
     }
 
-    DbManager &db = DbManager::instance();
-
     QJsonObject recv_cond;
     recv_cond["number"] = target_number;
 
-    const QJsonArray recv_json = db.selectItems("accounts", recv_cond);
+    const QJsonArray recv_json = DbManager::instance().selectItems("accounts", recv_cond);
     if (recv_json.isEmpty()) {
         emit transferFailed("입력하신 정보와 일치하는 계좌를 찾을 수 없습니다.");
         return;
@@ -68,13 +67,14 @@ void TransferManager::requestTransfer(const QString &target_number, const QStrin
 
     QJsonObject send_data;
     send_data["balance"] = send_new_balance;
-    db.updateItem("accounts", send_cond, send_data); // 내 계좌 돈 빼기
+    DbManager::instance().updateItem("accounts", send_cond, send_data); // 내 계좌 돈 빼기
 
     QJsonObject recv_data;
     recv_data["balance"] = recv_new_balance;
-    db.updateItem("accounts", recv_cond, recv_data); // 상대 계좌 돈 넣기
+    DbManager::instance().updateItem("accounts", recv_cond, recv_data); // 상대 계좌 돈 넣기
 
     QString currentTime = QDateTime::currentDateTime().toString(Qt::ISODate);
+
     // 내 거래 내역 (이체)
     QJsonObject send_history;
     send_history["number"] = sender_account.getNumber();
@@ -86,7 +86,7 @@ void TransferManager::requestTransfer(const QString &target_number, const QStrin
     // for current transfer accounts
     send_history["origin_number"] = target_number;
     send_history["origin_bank_name"] = target_bank_name;
-    db.insertItem("histories", send_history);
+    DbManager::instance().insertItem("histories", send_history);
 
     // 상대방 거래 내역 (입금)
     QJsonObject recv_history;
@@ -96,7 +96,7 @@ void TransferManager::requestTransfer(const QString &target_number, const QStrin
     recv_history["amount"] = amount;
     recv_history["balance"] = recv_new_balance;
     recv_history["datetime"] = currentTime;
-    db.insertItem("histories", recv_history);
+    DbManager::instance().insertItem("histories", recv_history);
     /* END TRANSACTION */
 
     sender_account.setBalance(send_new_balance);

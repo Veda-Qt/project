@@ -56,6 +56,8 @@ void MainWindow::showAccountList(const QString &owner_id)
 
 void MainWindow::showAccountHistory()
 {
+    HistoryManager::instance().loadHistories(TransferManager::instance().getSenderAccount());
+    AccountManager::instance().loadAccounts(AccountManager::instance().getOwnerId());
     ui->stackedWidget->setCurrentWidget(account_history_page);
 }
 
